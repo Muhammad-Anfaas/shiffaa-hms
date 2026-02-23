@@ -1,0 +1,52 @@
+# Project: HMS
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o admin_allied_panel.o admin_doctors_panel.o admin_patients_panel.o admin_portal.o admin_settings_panel.o patient_panel.o patient_portal_sign_up.o utility_functions.o
+LINKOBJ  = main.o admin_allied_panel.o admin_doctors_panel.o admin_patients_panel.o admin_portal.o admin_settings_panel.o patient_panel.o patient_portal_sign_up.o utility_functions.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = HMS.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\DevCpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+admin_allied_panel.o: admin_allied_panel.c
+	$(CC) -c admin_allied_panel.c -o admin_allied_panel.o $(CFLAGS)
+
+admin_doctors_panel.o: admin_doctors_panel.c
+	$(CC) -c admin_doctors_panel.c -o admin_doctors_panel.o $(CFLAGS)
+
+admin_patients_panel.o: admin_patients_panel.c
+	$(CC) -c admin_patients_panel.c -o admin_patients_panel.o $(CFLAGS)
+
+admin_portal.o: admin_portal.c
+	$(CC) -c admin_portal.c -o admin_portal.o $(CFLAGS)
+
+admin_settings_panel.o: admin_settings_panel.c
+	$(CC) -c admin_settings_panel.c -o admin_settings_panel.o $(CFLAGS)
+
+patient_panel.o: patient_panel.c
+	$(CC) -c patient_panel.c -o patient_panel.o $(CFLAGS)
+
+patient_portal_sign_up.o: patient_portal_sign_up.c
+	$(CC) -c patient_portal_sign_up.c -o patient_portal_sign_up.o $(CFLAGS)
+
+utility_functions.o: utility_functions.c
+	$(CC) -c utility_functions.c -o utility_functions.o $(CFLAGS)
